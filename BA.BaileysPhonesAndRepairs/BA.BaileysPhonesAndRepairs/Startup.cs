@@ -37,8 +37,8 @@ namespace BA.BaileysPhonesAndRepairs
             // Or configure recaptcha via options
             services.AddRecaptcha(options =>
             {
-                options.SecretKey = "6LcPQ8MZAAAAALffsOWvJAmU0e3a2IxY2j4dIhy4";
-                options.SiteKey = "6LcPQ8MZAAAAAF_44kZqGAqw5pel-zp8O9Nu4jwm";
+                options.SecretKey = "SecretKey";
+                options.SiteKey = "SiteKey";
             });
         }
 
