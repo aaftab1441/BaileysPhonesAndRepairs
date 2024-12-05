@@ -1,0 +1,77 @@
+﻿/*===============================
+    Universal Page Styles
+=================================*/
+
+.universal-btn {
+    /*overrides bootstrap*/
+    background-color: #E89B31 !important;
+    color: white !important;
+    border-color: #E89B31 !important;
+}
+
+    .universal-btn:hover {
+        /*overrides bootstrap*/
+        background-color: transparent !important;
+        border-color: #E89B31 !important;
+        color: #E89B31 !important;
+    }
+
+.universal-btn-outline {
+    background-color: transparent !important;
+    border-color: #E89B31 !important;
+    color: #E89B31 !important;
+}
+
+    .universal-btn-outline:hover {
+        background-color: #E89B31 !important;
+        color: white !important;
+        border-color: #E89B31 !important;
+    }
+
+.universal-text-primary {
+    color: #E89B31;
+}
+
+.universal-text-secondary {
+    color: #4C4A9D;
+}
+
+.universal-background-primary {
+    background-color: #E89B31;
+}
+
+.universal-background-secondary {
+    background-color: #4C4A9D;
+}
+
+.bg-gradient-custom {
+    background-image: linear-gradient(to right, #353895, #6567B1);
+}
+
+.universal-hr-primary {
+    border-top: 5px solid #E89B31;
+}
+
+/*===============================
+    Contact Page Styles
+=================================*/
+
+.contact-form {
+    background-color: transparent;
+}
+
+/*===============================
+    Phone Plans Page Styles
+=================================*/
+
+.pastel-one {
+    background-color: #F0F0F8;
+}
+
+.pastel-two {
+    background-color: #FCECDC;
+}
+
+.pastel-three {
+    background-color: #EBFAFD;
+}

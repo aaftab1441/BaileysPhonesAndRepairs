@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5848JVB');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @RenderSection("Metadata", required: false)
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.min.css" />
+    @RenderSection("Schema", required: false)
+</head>
+<body class="bg-light">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5848JVB"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v10.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your Chat Plugin code -->
+    <div class="fb-customerchat"
+         attribution="biz_inbox"
+         page_id="463065897224192">
+    </div>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-toggleable-md navbar-light border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src="~/images/baileys-phone-repairs-logo.png" width="141" height="42" alt="Bailey's Phones and Repair" loading="lazy">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-md-inline-flex flex-md-row-reverse">
+                    <ul class="navbar-nav flex-grow-1 justify-content-end font-weight-bold">
+                        <li class="nav-item mx-3">
+                            <a class="nav-link text-dark" asp-page="/Index">Home</a>
+                        </li>
+                        <li class="nav-item  mx-3">
+                            <a class="nav-link text-dark" asp-page="/PhonePlans">Phone Plans</a>
+                        </li>
+                        <li class="nav-item  mx-3">
+                            <a class="nav-link text-dark" asp-page="/InternetServices">Internet Services</a>
+                        </li>
+                        <li class="nav-item  mx-3">
+                            <a class="nav-link text-dark" asp-page="/Reviews">Reviews</a>
+                        </li>
+                        <li class="nav-item d-inline-flex d-md-none mx-3">
+                            <a class="nav-link text-dark" asp-page="/Index">Contact</a>
+                        </li>
+                        <li class="nav-item d-none d-md-inline-flex mx-3">
+                            <a class="nav-link text-dark btn universal-btn font-weight-bold rounded-pill px-4" asp-page="/ContactUs">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <partial name="_CookieConsentPartial" />
+    <main role="main" class="container-fluid">
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-8 mx-auto mb-5 universal-background-secondary">
+                    <h1 class="text-white mx-5 mt-5">Didn't find the best plan? Contact Us</h1>
+                    <a asp-page="/ContactUs" class="btn universal-btn font-weight-bold rounded-pill my-5 py-3 px-5"><h4>GET STARTED</h4></a>
+                </div>
+                <div class="col-8 my-5 mx-auto">
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-4 mb-5 mb-lg-0 text-center text-lg-left">
+                            <img class="img-fluid" src="~/images/baileys-phone-repairs-logo.png" alt="Bailey's Phones and Repair" loading="lazy">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h3 class="universal-text-secondary text-center text-lg-left">Links</h3>
+                            <ul class="text-center text-lg-left p-0 text-muted" style="list-style-type: none;">
+                                <li>
+                                    <a class="text-muted" asp-page="/Index">Home</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted" asp-page="/PhonePlans">Phone Plans</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted" asp-page="/InternetServices">Internet Services</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted" asp-page="/Reviews">Reviews</a>
+                                </li>
+                                <li>
+                                    <a class="text-muted" asp-page="/ContactUs">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h3 class="universal-text-secondary text-center text-lg-left">Reach Us</h3>
+                            <ul class="text-center text-lg-left p-0 text-muted" style="list-style-type: none;">
+                                <li>PO BOX 573</li>
+                                <li>Heyburn, ID 83336</li>
+                                <li>Tel: 208-650-4140</li>
+                                <li>brenda@baileysphonesandrepair.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style> @@media (max-width: 420px) { iframe.report_card_widget { max-width: 95%; }  } </style>
+        <script src="//static.reviewmgr.com/assets/reviews/minimalist_review_stream_parent_listener-be2ee46de1fa94818caf8a07451a5318336c759ed2e0421faebe20946ab3f87f.js"></script>
+        <iframe class="report_card_widget"
+                style="z-index: 1000; bottom: 0px; left: 0px; width: 445px; position: fixed;"
+                frameborder="0"
+                src="https://www.reviewmgr.com/baileys-phones-repair/bubblestream?per_page=10&last_initial=false&include_empty=true">
+        </iframe>
+    </footer>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

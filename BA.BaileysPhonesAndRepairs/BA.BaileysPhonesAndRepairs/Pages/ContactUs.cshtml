@@ -1,0 +1,75 @@
+﻿@page "/contact-us"
+@model BA.BaileysPhonesAndRepairs.Pages.ContactModel
+@using Microsoft.Extensions.Options
+@using reCAPTCHA.AspNetCore.Versions;
+@using reCAPTCHA.AspNetCore
+@inject IOptions<RecaptchaSettings> RecaptchaSettings
+@section Metadata {
+    <title>Contact Us | Bailey's Phones and Repair</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/icon.png" />
+    <link rel="canonical" href="https://baileysphonesandrepairs.com/contact-us" />
+    <link rel="image_src" href="/images/contact-banner.jpg" />
+    <meta itemprop="name" content="Bailey's Phones and Repair" />
+    <meta itemprop="url" content="https://baileysphonesandrepairs.com/contact-us" />
+    <meta itemprop="description" content="Call Bailey's Phones and Repair today to start your cell phone plan. 208-650-4140" />
+    <meta itemprop="thumbnailUrl" content="/images/contact-banner.jpg" />
+    <meta itemprop="image" content="/images/contact-banner.jpg" />
+    <meta name="description" content="Call Bailey's Phones and Repair today to start your cell phone plan. 208-650-4140" />
+    <meta property="og:site_name" content="Bailey's Phones and Repair" />
+    <meta property="og:title" content="Contact Us | Bailey's Phones and Repair" />
+    <meta property="og:url" content="https://baileysphonesandrepair.com/contact-us" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Call Bailey's Phones and Repair today to start your cell phone plan. 208-650-4140" />
+    <meta property="og:image" content="/images/contact-banner.jpg" />
+    <meta property="og:image:width" content="2119" />
+    <meta property="og:image:height" content="1415" />
+    <meta name="twitter:title" content="Contact Us | Bailey's Phones and Repair" />
+    <meta name="twitter:image" content="/images/index-banner.jpg" />
+    <meta name="twitter:url" content="https://baileysphonesandrepair.com/contact-us" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Call Bailey's Phones and Repair today to start your cell phone plan. 208-650-4140" />
+}
+@section Schema {
+    <script type="application/ld+json">
+        {"@@context":"https://schema.org","@@graph":[{"@@type":"MobilePhoneStore","@@id":"http://baileysphonesandrepair.com/#organization","name":"Bailey's Phones and Repair","url":"https://baileysphonesandrepair.com","image":"https://baileysphonesandrepair.com/images/index-banner.jpg","email":"brenda@baileysphonesandrepair.com","telephone":"+1 2086504140","priceRange":"$","paymentAccepted":"Cash, Credit Card","contactPoint":{"@@type":"ContactPoint","contactType":"Sales","email":"brenda@shawnwbailey.com","telephone":"+1 2086504140"},"review":{"@@type":"Review","url":"https://goo.gl/maps/tiF7Twj1g2jymu9w8","author":{"@@type":"Person","name":"Caroline Davis"},"publisher":{"@@type":"Organization","name":"Google","sameAs":"https://google.com"},"datePublished":"2020-06-13T20:00","description":"The lady was very helpful will go back again","inLanguage":"en","reviewRating":{"@@type":"Rating","worstRating":1,"bestRating":5,"ratingValue":5}}},{"@@context":"https://schema.org","@@type":"Website","@@id":"http://baileysphonesandrepair.com/#organization","name":"Bailey's Phones and Repair","url":"https://baileysphonesandrepair.com","contentRating":"G","keywords":"family cell plans, individual cell plans, pay as you go cell plans, cell phones, cell phone accessories"},{"@@context":"https://schema.org","@@type":"Organization","@@id":"http://baileysphonesandrepair.com/#organization","url":"http://baileysphonesandrepair.com","logo":"https://baileysphonesandrepair.com/images/baileys-phone-repairs-logo.png"},{"@@context":"http://schema.org","@@type":"WebPage","@@id":"http://baileysphonesandrepair.com/#organization","name":"Contact Us | Bailey's Phones and Repair","description":"Call Bailey's Phones and Repair today to start your cell phone plan. 208-650-4140"},{"@@context":"https://schema.org","@@type":"BreadcrumbList","@@id":"http://baileysphonesandrepair.com/#organization","itemListElement":[{"@@type":"ListItem","position":"1","name":"Affordable Cell Phone Plans | Bailey's Phones and Repair","item":"https://baileysphonesandrepair.com"},{"@@type":"ListItem","position":"2","name":"Contact Us | Bailey's Phones and Repair","item":"https://baileysphonesandrepair.com/contact-us"}]}]}
+    </script>
+}
+<div class="row mb-5 mb-lg-0">
+    <div class="col-12 col-lg-6 p-0">
+        <div>
+            <img class="img-fluid text-center align-self-center" src="~/Images/contact-banner.jpg" alt="Contact Us" />
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 my-auto">
+        <h1 class="text-muted mt-5 mt-lg-0">Contact Us</h1>
+        <hr class="universal-hr-primary m-0 mb-3" style="width: 25%;" />
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "main", @class = "contact " }))
+        {
+            @Html.ValidationSummary(true);
+            <div class="flex1 my-3">
+                <input asp-for="contactUsModel.Name" type="text" class="border py-3 contact-form font-weight-bold w-100" placeholder=" FULL NAME">
+                <span asp-validation-for="contactUsModel.Name"></span>
+            </div>
+            <div class="form-inline my-3">
+
+                <div class="flex1 w-50">
+                    <input asp-for="contactUsModel.Email" type="email" class="border py-3 contact-form font-weight-bold w-100" placeholder=" EMAIL">
+                    <span asp-validation-for="contactUsModel.Email"></span>
+                </div>
+                <div class="flex1 w-50">
+                    <input asp-for="contactUsModel.Phone" type="text" class="border py-3 contact-form font-weight-bold w-100" placeholder=" TELEPHONE">
+                    <span asp-validation-for="contactUsModel.Phone"></span>
+                </div>
+            </div>
+            <div class="my-3">
+                <textarea asp-for="contactUsModel.Comments" class="border py-3 contact-form font-weight-bold w-100" rows="3" placeholder=" MESSAGE"></textarea>
+                <span asp-validation-for="contactUsModel.Comments"></span>
+            </div>
+            <div class="my-3">
+                @(Html.Recaptcha<RecaptchaV3HiddenInput>(RecaptchaSettings.Value))
+            </div>
+            <input class="btn universal-btn font-weight-bold rounded-pill py-3 px-5" type="submit" value="SUBMIT">
+        }
+    </div>
+</div>
+
